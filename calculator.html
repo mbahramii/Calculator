@@ -4,63 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
 </head>
 <body>
     <div class="calculator">
         <input type="text"  id="display">
         <div class="button">
-            <button onclick="appendValue('7')">7</button>
-            <button onclick="appendValue('8')">8</button>
-            <button onclick="appendValue('9')">9</button>
-            <button onclick="calculatorPercent('/')">/</button>
+            <button class="operators" onclick="clearDispaly()">C</button>
+            <button class="operators" onclick="deleteLast()">DEL</button>
+            <button class="operators" onclick="appendValue('(')">(</button>
+            <button class="operators" onclick="appendValue(')')">)</button>
 
-            <button onclick="appendValue('6')">6</button>
-            <button onclick="appendValue('5')">5</button>
-            <button onclick="appendValue('4')">4</button>
-            <button onclick="appendValue('*')">*</button>
-            
-            <button onclick="appendValue('3')">3</button>
-            <button onclick="appendValue('2')">2</button>
-            <button onclick="appendValue('1')">1</button>
-            <button onclick="appendValue('-')">-</button>
-            <button onclick="appendValue('(')">(</button>
-            <button onclick="appendValue(')')">)</button>
-            
-            <button onclick="appendValue('0')">0</button>
-            <button onclick="appendValue('.')">.</button>
-            <button onclick="calculatorResult()">=</button>
+            <button class="number" onclick="appendValue('7')">7</button>
+            <button class="number" onclick="appendValue('8')">8</button>
+            <button class="number" onclick="appendValue('9')">9</button>
+            <button class="operators" onclick="calculatorPercent('/')">/</button>
 
-            <button onclick="appendValue('+')">+</button>
+            <button class="number" onclick="appendValue('6')">6</button>
+            <button class="number" onclick="appendValue('5')">5</button>
+            <button class="number" onclick="appendValue('4')">4</button>
+            <button class="operators" onclick="appendValue('*')">*</button>
             
-            <button onclick="clearDispaly()">C</button>
-            <button onclick="deleteLast()">⌫</button>
+            <button class="number" onclick="appendValue('3')">3</button>
+            <button class="number" onclick="appendValue('2')">2</button>
+            <button class="number" onclick="appendValue('1')">1</button>
+            <button class="operators" onclick="appendValue('-')">-</button>
+
+            
+            <button class="number" onclick="appendValue('.')">.</button>
+            <button class="number" onclick="appendValue('0')">0</button>
+            <button class="operators" onclick="calculatorResult()">=</button>
+            <button class="operators" onclick="appendValue('+')">+</button>
+            
         </div>
     </div>
 </body>
-    <Script>
-        function appendValue(value) {
-            document.getElementById('display').value += value ;
-        }
-
-        function deleteLast() {
-            let display = document.getElementById('display')
-            display.value = display.value.slice(0 , -1)
-        }
-        
-        function clearDispaly() {
-            document.getElementById('display').value = '' ;
-        }
-
-        function calculatorResult() {
-            let display = document.getElementById('display');
-            try {
-                display.value = eval(display.value)
-            }
-            catch {
-                display.value = 'خطا';
-            }
-        } 
-        
-
-    </Script>
+    <Script src="calculator.js"></Script>
 </html>
